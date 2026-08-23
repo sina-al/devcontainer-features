@@ -1,0 +1,20 @@
+{
+    "latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "bat": {
+                "version": "latest"
+            }
+        },
+        "remoteUser": "vscode"
+    },
+    "pinned": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "bat": {
+                "version": "0.26.1"
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}

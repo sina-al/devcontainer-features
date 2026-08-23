@@ -24,6 +24,25 @@ check "uv on PATH" command -v uv
 check "uv --version" uv --version
 check "uvx on PATH" command -v uvx
 check "uvx --version" uvx --version
+check "gcloud on PATH" command -v gcloud
+check "opencode on PATH" command -v opencode
+check "rtk on PATH" command -v rtk
+check "jq on PATH" command -v jq
+check "jq --version" jq --version
+check "yq on PATH" command -v yq
+check "yq --version" yq --version
+check "fzf on PATH" command -v fzf
+check "fzf --version" fzf --version
+check "bat on PATH" command -v bat
+check "bat --version" bat --version
+check "eza on PATH" command -v eza
+check "eza --version" eza --version
+check "zoxide on PATH" command -v zoxide
+check "zoxide --version" zoxide --version
+check "zellij on PATH" command -v zellij
+check "zellij --version" zellij --version
+check "kustomize on PATH" command -v kustomize
+check "kustomize version" kustomize version
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.

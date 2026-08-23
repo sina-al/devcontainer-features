@@ -1,0 +1,20 @@
+{
+    "latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "yq": {
+                "version": "latest"
+            }
+        },
+        "remoteUser": "vscode"
+    },
+    "pinned": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "yq": {
+                "version": "4.53.6"
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}

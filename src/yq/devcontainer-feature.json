@@ -1,0 +1,20 @@
+{
+  "id": "yq",
+  "version": "0.1.0",
+  "name": "yq",
+  "documentationURL": "https://github.com/mikefarah/yq",
+  "description": "Installs yq, a portable command-line YAML, JSON, XML, CSV, and properties processor.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "4.53.6",
+        "4.53.5",
+        "4.52.1"
+      ],
+      "default": "latest",
+      "description": "yq version to install. 'latest' installs the newest release. Otherwise a published version such as '4.53.6' (a leading 'v' is stripped)."
+    }
+  }
+}

@@ -9,12 +9,20 @@ template. See `AGENTS.md` for conventions.
 
 | Feature | Description |
 | --- | --- |
-| [`fireconnect`](src/fireconnect/README.md) | Routes coding agents through Fireworks AI models via the [FireConnect](https://github.com/fw-ai/fireconnect) CLI. |
+| [`fireConnect`](src/fireconnect/README.md) | Routes coding agents through Fireworks AI models via the [FireConnect](https://github.com/fw-ai/fireconnect) CLI. |
 | [`devcontainers-cli`](src/devcontainers-cli/README.md) | Installs the official `devcontainer` CLI. |
 | [`uv`](src/uv/README.md) | Installs [uv](https://docs.astral.sh/uv/) and `uvx`, with optional pre-installed Python and uv-managed enforcement. |
 | [`gcloud-cli`](src/gcloud-cli/README.md) | Installs the Google Cloud CLI (`gcloud`) via the official apt repository. |
 | [`opencode`](src/opencode/README.md) | Installs [opencode](https://opencode.ai), an AI coding agent for the terminal. |
 | [`rtk`](src/rtk/README.md) | Installs [rtk](https://www.rtk-ai.app), compresses CLI output to save AI context tokens. |
+| [`jq`](src/jq/README.md) | Installs [jq](https://jqlang.github.io/jq/), a command-line JSON processor. |
+| [`yq`](src/yq/README.md) | Installs [yq](https://github.com/mikefarah/yq), a command-line YAML/JSON/XML/CSV processor. |
+| [`fzf`](src/fzf/README.md) | Installs [fzf](https://github.com/junegunn/fzf), a command-line fuzzy finder. |
+| [`bat`](src/bat/README.md) | Installs [bat](https://github.com/sharkdp/bat), a cat clone with syntax highlighting. |
+| [`eza`](src/eza/README.md) | Installs [eza](https://github.com/eza-community/eza), a modern replacement for ls. |
+| [`zoxide`](src/zoxide/README.md) | Installs [zoxide](https://github.com/ajeetdsouza/zoxide), a smarter cd command. |
+| [`zellij`](src/zellij/README.md) | Installs [zellij](https://zellij.dev), a terminal workspace with panes and tabs. |
+| [`kustomize`](src/kustomize/README.md) | Installs [kustomize](https://kubectl.docs.kubernetes.io/), a Kubernetes config management tool. |
 
 ## Usage
 
@@ -25,7 +33,15 @@ template. See `AGENTS.md` for conventions.
   "ghcr.io/sina-al/devcontainer-features/uv:0.2": { "version": "latest", "pythonVersions": "3.12,3.13", "defaultPython": "3.12" },
   "ghcr.io/sina-al/devcontainer-features/gcloud-cli:0.1": { "version": "latest" },
   "ghcr.io/sina-al/devcontainer-features/opencode:0.1": { "version": "latest" },
-  "ghcr.io/sina-al/devcontainer-features/rtk:0.1": { "version": "latest", "agent": "opencode" }
+  "ghcr.io/sina-al/devcontainer-features/rtk:0.1": { "version": "latest", "agent": "opencode" },
+  "ghcr.io/sina-al/devcontainer-features/jq:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/yq:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/fzf:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/bat:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/eza:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/zoxide:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/zellij:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/kustomize:0.1": { "version": "latest" }
 }
 ```
 

@@ -1,0 +1,20 @@
+{
+  "id": "kustomize",
+  "version": "0.1.0",
+  "name": "kustomize",
+  "documentationURL": "https://kubectl.docs.kubernetes.io/",
+  "description": "Installs kustomize, a Kubernetes configuration management tool that customizes raw, template-free YAML files for multiple purposes.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "5.8.1",
+        "5.7.1",
+        "5.6.0"
+      ],
+      "default": "latest",
+      "description": "kustomize version to install. 'latest' installs the newest release. Otherwise a published version such as '5.8.1' (a leading 'v' is stripped)."
+    }
+  }
+}

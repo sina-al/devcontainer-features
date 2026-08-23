@@ -1,0 +1,20 @@
+{
+    "latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "eza": {
+                "version": "latest"
+            }
+        },
+        "remoteUser": "vscode"
+    },
+    "pinned": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "eza": {
+                "version": "0.23.5"
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}

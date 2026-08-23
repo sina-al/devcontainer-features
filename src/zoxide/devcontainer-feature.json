@@ -1,0 +1,20 @@
+{
+  "id": "zoxide",
+  "version": "0.1.0",
+  "name": "zoxide",
+  "documentationURL": "https://github.com/ajeetdsouza/zoxide",
+  "description": "Installs zoxide, a smarter cd command that learns your habits.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "0.10.0",
+        "0.9.8",
+        "0.9.7"
+      ],
+      "default": "latest",
+      "description": "zoxide version to install. 'latest' installs the newest release. Otherwise a published version such as '0.10.0' (a leading 'v' is stripped)."
+    }
+  }
+}

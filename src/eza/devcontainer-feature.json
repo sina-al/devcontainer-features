@@ -1,0 +1,20 @@
+{
+  "id": "eza",
+  "version": "0.1.0",
+  "name": "eza",
+  "documentationURL": "https://github.com/eza-community/eza",
+  "description": "Installs eza, a modern, maintained replacement for ls with colors, icons, git status, and more.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "0.23.5",
+        "0.23.4",
+        "0.22.0"
+      ],
+      "default": "latest",
+      "description": "eza version to install. 'latest' installs the newest release. Otherwise a published version such as '0.23.5' (a leading 'v' is stripped)."
+    }
+  }
+}

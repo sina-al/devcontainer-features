@@ -1,0 +1,20 @@
+{
+  "id": "bat",
+  "version": "0.1.0",
+  "name": "bat",
+  "documentationURL": "https://github.com/sharkdp/bat",
+  "description": "Installs bat, a cat clone with syntax highlighting and Git integration.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "0.26.1",
+        "0.25.0",
+        "0.24.0"
+      ],
+      "default": "latest",
+      "description": "bat version to install. 'latest' installs the newest release. Otherwise a published version such as '0.26.1' (a leading 'v' is stripped)."
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "jq",
+  "version": "0.1.0",
+  "name": "jq",
+  "documentationURL": "https://jqlang.github.io/jq/",
+  "description": "Installs jq, a lightweight and flexible command-line JSON processor.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "1.8.2",
+        "1.8.1",
+        "1.7.1"
+      ],
+      "default": "latest",
+      "description": "jq version to install. 'latest' installs the newest release. Otherwise a published version such as '1.8.2' (a leading 'v' is stripped)."
+    }
+  }
+}

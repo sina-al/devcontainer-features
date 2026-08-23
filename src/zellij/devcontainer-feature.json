@@ -1,0 +1,20 @@
+{
+  "id": "zellij",
+  "version": "0.1.0",
+  "name": "zellij",
+  "documentationURL": "https://zellij.dev",
+  "description": "Installs zellij, a terminal workspace with panes, tabs, layouts, and a built-in layout system.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "0.45.0",
+        "0.44.1",
+        "0.42.1"
+      ],
+      "default": "latest",
+      "description": "zellij version to install. 'latest' installs the newest release. Otherwise a published version such as '0.45.0' (a leading 'v' is stripped)."
+    }
+  }
+}

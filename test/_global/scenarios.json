@@ -39,6 +39,30 @@
             },
             "rtk": {
                 "version": "latest"
+            },
+            "jq": {
+                "version": "latest"
+            },
+            "yq": {
+                "version": "latest"
+            },
+            "fzf": {
+                "version": "latest"
+            },
+            "bat": {
+                "version": "latest"
+            },
+            "eza": {
+                "version": "latest"
+            },
+            "zoxide": {
+                "version": "latest"
+            },
+            "zellij": {
+                "version": "latest"
+            },
+            "kustomize": {
+                "version": "latest"
             }
         },
         "remoteUser": "vscode"
