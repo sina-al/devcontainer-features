@@ -1,23 +1,24 @@
-# zellij
 
-Installs [zellij](https://zellij.dev) — a terminal workspace with panes, tabs, layouts, and a built-in layout system.
+# zellij (zellij)
 
-## Usage
+Installs zellij, a terminal workspace with panes, tabs, layouts, and a built-in layout system.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/zellij:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/zellij:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | zellij version. `latest` installs the newest release. Otherwise a specific version like `0.45.0`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | zellij version to install. 'latest' installs the newest release. Otherwise a published version such as '0.45.0' (a leading 'v' is stripped). | string | latest |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/zellij` (system-wide, always on PATH).
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/zellij/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

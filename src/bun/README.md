@@ -1,23 +1,24 @@
-# Bun
 
-Installs [Bun](https://bun.sh/) — a fast JavaScript runtime, bundler, and package manager.
+# Bun (bun)
 
-## Usage
+Installs Bun, a fast JavaScript runtime, bundler, and package manager.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/bun:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/bun:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | Bun version. `latest` installs the newest release. Otherwise a specific version like `1.4.0`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | Bun version to install. 'latest' installs the newest release. Otherwise a published version such as '1.4.0' (a leading 'bun-v' is stripped). | string | latest |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/bun` (system-wide, always on PATH).
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/bun/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

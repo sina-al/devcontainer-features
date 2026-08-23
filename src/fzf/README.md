@@ -1,23 +1,24 @@
-# fzf
 
-Installs [fzf](https://github.com/junegunn/fzf) — a general-purpose command-line fuzzy finder.
+# fzf (fzf)
 
-## Usage
+Installs fzf, a general-purpose command-line fuzzy finder.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/fzf:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/fzf:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | fzf version. `latest` installs the newest release. Otherwise a specific version like `0.74.3`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | fzf version to install. 'latest' installs the newest release. Otherwise a published version such as '0.74.3' (a leading 'v' is stripped). | string | latest |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/fzf` (system-wide, always on PATH). Shell keybindings and completions can be set up via `fzf --bash`, `fzf --zsh`, or `fzf --fish` in your dotfiles.
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/fzf/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
