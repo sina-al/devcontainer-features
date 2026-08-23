@@ -1,23 +1,24 @@
-# bat
 
-Installs [bat](https://github.com/sharkdp/bat) — a cat clone with syntax highlighting and Git integration.
+# bat (bat)
 
-## Usage
+Installs bat, a cat clone with syntax highlighting and Git integration.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/bat:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/bat:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | bat version. `latest` installs the newest release. Otherwise a specific version like `0.26.1`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | bat version to install. 'latest' installs the newest release. Otherwise a published version such as '0.26.1' (a leading 'v' is stripped). | string | latest |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/bat` (system-wide, always on PATH).
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/bat/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
