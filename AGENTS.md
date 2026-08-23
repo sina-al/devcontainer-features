@@ -46,10 +46,11 @@ LICENSE
 
 ## Conventions (bake into every feature)
 
-- **Install as the remote user** via `su - "${_REMOTE_USER:-${_CONTAINER_USER:-vscode}}"`,
+- **Install as the remote user** via `su - "${_REMOTE_USER:-${_CONTAINER_USER:-sandbox}}"`,
   so launchers, `~/.local/bin`, and `PATH` updates land in the user's home, not `/root`.
   A feature runs as root at build time; running the vendor installer as-is would put the
-  tool in `/root` and off the sandbox user's `PATH`.
+  tool in `/root` and off the sandbox user's `PATH`. The fallback chain is
+  `_REMOTE_USER` → `_CONTAINER_USER` → `sandbox` (if it exists) → `root`.
 - **Pin everything.** Each feature exposes a `version` option for the tool; the feature's
   own `version` in `devcontainer-feature.json` is semver; consumers reference `:1` (major).
   No floating tags in published references.

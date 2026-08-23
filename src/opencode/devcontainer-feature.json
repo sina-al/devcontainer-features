@@ -16,12 +16,5 @@
       "default": "latest",
       "description": "opencode version to install. 'latest' installs the newest release. Otherwise a published version such as '1.18.21' (a leading 'v' is stripped)."
     }
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "sst-dev.opencode"
-      ]
-    }
   }
 }

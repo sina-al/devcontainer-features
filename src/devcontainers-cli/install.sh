@@ -11,8 +11,8 @@ set -e
 # --- Resolve the user to install for -----------------------------------------
 USERNAME="${_REMOTE_USER:-${_CONTAINER_USER:-}}"
 if [[ -z "${USERNAME}" ]] || ! id -u "${USERNAME}" >/dev/null 2>&1; then
-  if id -u vscode >/dev/null 2>&1; then
-    USERNAME="vscode"
+  if id -u sandbox >/dev/null 2>&1; then
+    USERNAME="sandbox"
   else
     USERNAME="root"
   fi

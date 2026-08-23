@@ -15,23 +15,6 @@
       "version": "2.98.0"
     }
   },
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "json.schemas": [
-          {
-            "fileMatch": [
-              "*/devcontainer-feature.json"
-            ],
-            "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
-          }
-        ]
-      },
-      "extensions": [
-        "mads-hartmann.bash-ide-vscode"
-      ]
-    }
-  },
   "forwardAgent": true,
   "remoteUser": "vscode",
   "postCreateCommand": "bash .devcontainer/scripts/post-create.sh"
