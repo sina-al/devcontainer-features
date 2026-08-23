@@ -92,6 +92,7 @@ echo "uv: setting UV_PYTHON_PREFERENCE=${PYTHON_PREFERENCE} ..."
 
 cat >/etc/profile.d/uv-python.sh <<EOF
 export UV_PYTHON_PREFERENCE=${PYTHON_PREFERENCE}
+export PATH="\${HOME}/.local/bin:\${PATH}"
 EOF
 chmod 0644 /etc/profile.d/uv-python.sh
 

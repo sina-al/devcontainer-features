@@ -1,6 +1,6 @@
 {
   "id": "uv",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "name": "uv (and uvx)",
   "documentationURL": "https://docs.astral.sh/uv/",
   "description": "Installs uv and uvx, the extremely fast Python package and project manager from Astral, via the official standalone installer. Optionally pre-installs uv-managed Python versions and enforces uv as the sole Python source.",
