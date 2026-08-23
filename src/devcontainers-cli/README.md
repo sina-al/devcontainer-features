@@ -18,7 +18,7 @@ containers and helps author and test dev container features and templates.
 
 | Options Id | Type | Default | Description |
 | --- | --- | --- | --- |
-| version | string | `latest` | CLI version to install. `latest` installs the newest release; otherwise a published tag such as `0.82.0`. |
+| version | string | `latest` | CLI version to install. `latest` installs the newest release; otherwise a published version such as `0.88.0` (a leading `v` is stripped). |
 
 ## Useful commands
 

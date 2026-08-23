@@ -17,6 +17,7 @@ original stand-up plan.
 | --- | --- |
 | [`fireconnect`](src/fireconnect/README.md) | Installs the [FireConnect](https://github.com/fw-ai/fireconnect) CLI, which routes coding agents (OpenCode, Claude Code, Codex, and others) through Fireworks AI models. |
 | [`devcontainers-cli`](src/devcontainers-cli/README.md) | Installs the official Dev Container CLI (`devcontainer`) via its self-contained installer. |
+| [`uv`](src/uv/README.md) | Installs [uv](https://docs.astral.sh/uv/) and `uvx`, Astral's extremely fast Python package and project manager, via the official standalone installer. |
 
 ## Usage
 

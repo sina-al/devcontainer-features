@@ -14,6 +14,7 @@ jobs:
       matrix:
         features:
           - devcontainers-cli
+          - uv
         baseImage:
           - mcr.microsoft.com/devcontainers/base:ubuntu
           - mcr.microsoft.com/devcontainers/base:debian
@@ -34,6 +35,7 @@ jobs:
         features:
           - fireconnect
           - devcontainers-cli
+          - uv
     steps:
       - uses: actions/checkout@v4
 

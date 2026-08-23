@@ -14,5 +14,24 @@
             }
         },
         "remoteUser": "vscode"
+    },
+    "all_features": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/node:2": {
+                "version": "24"
+            },
+            "devcontainers-cli": {
+                "version": "latest"
+            },
+            "fireconnect": {
+                "version": "latest",
+                "login": false
+            },
+            "uv": {
+                "version": "latest"
+            }
+        },
+        "remoteUser": "vscode"
     }
 }

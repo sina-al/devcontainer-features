@@ -20,6 +20,9 @@ fi
 
 # --- Feature inputs -----------------------------------------------------------
 VERSION="${VERSION:-latest}"
+# The installer expects a bare version (e.g. "0.88.0"); strip a leading "v"
+# since GitHub release tags are prefixed with one (e.g. "v0.88.0").
+VERSION="${VERSION#v}"
 
 INSTALL_SCRIPT="https://raw.githubusercontent.com/devcontainers/cli/main/scripts/install.sh"
 

@@ -8,10 +8,14 @@
     "version": {
       "type": "string",
       "proposals": [
-        "latest"
+        "latest",
+        "0.88.0",
+        "0.87.0",
+        "0.86.1",
+        "0.85.0"
       ],
       "default": "latest",
-      "description": "Dev Container CLI version to install. 'latest' installs the newest release. Otherwise a published version tag such as '0.82.0'."
+      "description": "Dev Container CLI version to install. 'latest' installs the newest release. Otherwise a published version such as '0.88.0' (a leading 'v' is stripped)."
     }
   }
 }

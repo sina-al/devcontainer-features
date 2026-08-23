@@ -1,0 +1,23 @@
+{
+  "id": "uv",
+  "version": "0.1.0",
+  "name": "uv (and uvx)",
+  "documentationURL": "https://docs.astral.sh/uv/",
+  "description": "Installs uv and uvx, the extremely fast Python package and project manager from Astral, via the official standalone installer.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "0.12.5",
+        "0.12.4",
+        "0.12.3"
+      ],
+      "default": "latest",
+      "description": "uv version to install. 'latest' installs the newest release. Otherwise a published version such as '0.12.5' (a leading 'v' is stripped)."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
