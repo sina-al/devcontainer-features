@@ -1,9 +1,9 @@
 {
   "id": "uv",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "uv (and uvx)",
   "documentationURL": "https://docs.astral.sh/uv/",
-  "description": "Installs uv and uvx, the extremely fast Python package and project manager from Astral, via the official standalone installer.",
+  "description": "Installs uv and uvx, the extremely fast Python package and project manager from Astral, via the official standalone installer. Optionally pre-installs uv-managed Python versions and enforces uv as the sole Python source.",
   "options": {
     "version": {
       "type": "string",
@@ -15,6 +15,33 @@
       ],
       "default": "latest",
       "description": "uv version to install. 'latest' installs the newest release. Otherwise a published version such as '0.12.5' (a leading 'v' is stripped)."
+    },
+    "pythonVersions": {
+      "type": "string",
+      "default": "",
+      "description": "Comma-separated Python versions to pre-install at build time (e.g. '3.12,3.13'). Empty installs none; install later with 'uv python install'."
+    },
+    "defaultPython": {
+      "type": "string",
+      "proposals": [
+        "",
+        "3.12",
+        "3.13",
+        "3.14"
+      ],
+      "default": "",
+      "description": "Python version to pin as the global default (e.g. '3.12'). If set, it is installed (with --default) and pinned via 'uv python pin --global'."
+    },
+    "pythonPreference": {
+      "type": "string",
+      "proposals": [
+        "only-managed",
+        "managed",
+        "system",
+        "only-system"
+      ],
+      "default": "only-managed",
+      "description": "Sets UV_PYTHON_PREFERENCE so uv enforces uv-managed Python. 'only-managed' (the default) makes uv ignore system Python entirely; 'managed' prefers uv-managed but falls back to system."
     }
   },
   "installsAfter": [

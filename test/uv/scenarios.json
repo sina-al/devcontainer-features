@@ -16,5 +16,17 @@
             }
         },
         "remoteUser": "vscode"
+    },
+    "python": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "uv": {
+                "version": "latest",
+                "pythonVersions": "3.12,3.13",
+                "defaultPython": "3.12",
+                "pythonPreference": "only-managed"
+            }
+        },
+        "remoteUser": "vscode"
     }
 }

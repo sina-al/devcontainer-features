@@ -25,6 +25,33 @@ as a release asset at
 A leading `v` is stripped from the version input so GitHub-style tags (`v0.12.5`)
 work too.
 
+## Pre-installing Python at build time
+
+`uv python install <version>` downloads a standalone Python build from the
+python-build-standalone project and extracts it under
+`~/.local/share/uv/python/`. Running this at image build time (via this feature's
+`pythonVersions` option) bakes the interpreters into the image layer, so the
+pre-built image has them ready with no runtime download. `uv python pin <version>
+--global` writes `~/.config/uv/.python-version` so uv selects that version by
+default for projects without their own pin.
+
+## Python enforcement via UV_PYTHON_PREFERENCE
+
+The key enforcement mechanism is the `UV_PYTHON_PREFERENCE` environment variable.
+`only-managed` (the default) tells uv to only use uv-managed Python interpreters
+and ignore any system Python — whether from the base image, the
+`ghcr.io/devcontainers/features/python` feature, or a system package manager.
+This means:
+
+- `uv run python` uses a uv-managed interpreter, not `/usr/bin/python3`.
+- `uv pip install` installs into a uv-managed environment, not a system one.
+- If no uv-managed Python is installed, uv errors instead of falling back to
+  system Python (unless `pythonPreference` is `managed`).
+
+The variable is written to `/etc/profile.d/uv-python.sh` (sourced by login
+shells) and `~/.bashrc` (sourced by interactive non-login shells), so it covers
+both the VS Code terminal and `devcontainer`-launched processes.
+
 ## Why based on devcontainers-extra/features/uv
 
 The most popular community uv feature (`ghcr.io/devcontainers-extra/features/uv`,
@@ -32,4 +59,6 @@ The most popular community uv feature (`ghcr.io/devcontainers-extra/features/uv`
 scenario + pinned-version tests. Its `install.sh`, however, uses a "nanolayer"
 meta-tool that downloads the release tarball as root into `/usr/local/bin`. This
 feature instead uses Astral's official installer under `su -`, matching this
-collection's convention of installing into the remote user's home.
+collection's convention of installing into the remote user's home, and adds
+build-time Python pre-installation and enforcement that the community feature
+does not offer.
