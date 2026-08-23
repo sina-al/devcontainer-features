@@ -1,25 +1,25 @@
-# gcloud-cli
 
-Installs the Google Cloud CLI (`gcloud`) via the official Google Cloud SDK apt repository.
+# Google Cloud CLI (gcloud-cli)
 
-## Usage
+Installs the Google Cloud CLI (gcloud) via the official Google Cloud SDK apt repository. Optionally installs the GKE gcloud auth plugin.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/gcloud-cli:0.1": {
-    "version": "latest",
-    "installGkeGcloudAuthPlugin": true
-  }
+    "ghcr.io/sina-al/devcontainer-features/gcloud-cli:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | gcloud CLI version. `latest` installs the newest in the apt repo. Otherwise a specific version like `531.0.0`. |
-| `installGkeGcloudAuthPlugin` | boolean | `false` | If true, also installs `google-cloud-sdk-gke-gcloud-auth-plugin` for `kubectl` auth. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | gcloud CLI version to install. 'latest' installs the newest version in the apt repo. Otherwise a specific version such as '531.0.0'. | string | latest |
+| installGkeGcloudAuthPlugin | If true, also installs google-cloud-sdk-gke-gcloud-auth-plugin for kubectl auth. | boolean | false |
 
-## Notes
 
-Authentication is a runtime step — run `gcloud auth login` after the container starts. Do not bake credentials into the image.
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/gcloud-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
