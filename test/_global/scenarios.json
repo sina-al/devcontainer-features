@@ -1,0 +1,18 @@
+{
+    "cli_and_fireconnect": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/node:2": {
+                "version": "24"
+            },
+            "devcontainers-cli": {
+                "version": "latest"
+            },
+            "fireconnect": {
+                "version": "latest",
+                "login": false
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}

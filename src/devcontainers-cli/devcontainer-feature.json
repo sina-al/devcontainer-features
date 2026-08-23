@@ -1,0 +1,17 @@
+{
+  "id": "devcontainers-cli",
+  "version": "0.1.0",
+  "name": "Dev Container CLI",
+  "documentationURL": "https://github.com/devcontainers/cli",
+  "description": "Installs the official Dev Container CLI (devcontainer), used to build, run, and test dev containers and author/tests dev container features and templates.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest"
+      ],
+      "default": "latest",
+      "description": "Dev Container CLI version to install. 'latest' installs the newest release. Otherwise a published version tag such as '0.82.0'."
+    }
+  }
+}

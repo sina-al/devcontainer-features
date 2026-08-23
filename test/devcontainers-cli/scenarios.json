@@ -1,0 +1,11 @@
+{
+    "latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "devcontainers-cli": {
+                "version": "latest"
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}

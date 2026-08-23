@@ -1,0 +1,33 @@
+{
+  "id": "fireconnect",
+  "version": "0.1.0",
+  "name": "FireConnect CLI",
+  "documentationURL": "https://github.com/fw-ai/fireconnect",
+  "description": "Installs the FireConnect CLI, which routes coding agents (OpenCode, Claude Code, Codex, and others) through Fireworks AI models.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest"
+      ],
+      "default": "latest",
+      "description": "FireConnect version to install. 'latest' clones the default branch. Otherwise a git tag or commit SHA (for example 'v0.10.4')."
+    },
+    "login": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, signs in non-interactively at build time using the FIRECONNECT_TOKEN (or FIREWORKS_API_KEY) environment variable. Keep false for personal sandboxes and sign in at runtime with 'fireconnect login' instead."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/devcontainers/features/node"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "sst-dev.opencode"
+      ]
+    }
+  }
+}
