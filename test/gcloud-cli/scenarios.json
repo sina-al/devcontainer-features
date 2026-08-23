@@ -1,0 +1,12 @@
+{
+    "pinned": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gcloud-cli": {
+                "version": "latest",
+                "installGkeGcloudAuthPlugin": true
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}

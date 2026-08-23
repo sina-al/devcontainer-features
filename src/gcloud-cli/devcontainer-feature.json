@@ -1,0 +1,29 @@
+{
+  "id": "gcloud-cli",
+  "version": "0.1.0",
+  "name": "Google Cloud CLI",
+  "documentationURL": "https://cloud.google.com/sdk/docs",
+  "description": "Installs the Google Cloud CLI (gcloud) via the official Google Cloud SDK apt repository. Optionally installs the GKE gcloud auth plugin.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "531.0.0",
+        "530.0.0",
+        "520.0.0",
+        "510.0.0"
+      ],
+      "default": "latest",
+      "description": "gcloud CLI version to install. 'latest' installs the newest version in the apt repo. Otherwise a specific version such as '531.0.0'."
+    },
+    "installGkeGcloudAuthPlugin": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, also installs google-cloud-sdk-gke-gcloud-auth-plugin for kubectl auth."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}

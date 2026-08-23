@@ -1,0 +1,30 @@
+{
+    "latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "rtk": {
+                "version": "latest"
+            }
+        },
+        "remoteUser": "vscode"
+    },
+    "pinned": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "rtk": {
+                "version": "0.45.0"
+            }
+        },
+        "remoteUser": "vscode"
+    },
+    "with_agent": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "rtk": {
+                "version": "latest",
+                "agent": "opencode"
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}

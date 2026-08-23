@@ -30,6 +30,15 @@
             },
             "uv": {
                 "version": "latest"
+            },
+            "gcloud-cli": {
+                "version": "latest"
+            },
+            "opencode": {
+                "version": "latest"
+            },
+            "rtk": {
+                "version": "latest"
             }
         },
         "remoteUser": "vscode"

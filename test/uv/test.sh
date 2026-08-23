@@ -5,10 +5,11 @@
 # default, 'latest'). It is also the fallback for scenarios without their own
 # per-scenario script.
 #
-# uv installs the binaries at ~/.local/bin and appends that to the user's
-# .bashrc. Non-interactive shells do not source .bashrc, so ~/.local/bin is
-# prepended to PATH explicitly below. Both 'uv' and 'uvx' ship in the same
-# tarball, so both are asserted.
+# uv installs binaries to ~/.local/bin. The feature adds ~/.local/bin to PATH
+# via /etc/profile.d so that login/SSH shells (e.g. DevPod) can find it. Tests
+# must NOT manually prepend ~/.local/bin to PATH — that masks real bugs.
+# Instead, checks run inside a login shell (bash -l -c) to simulate the real
+# DevPod experience.
 #
 # Run locally (from the repo root):
 #    devcontainer features test --features uv .
@@ -21,12 +22,12 @@ set -e
 # Provides the 'check' and 'reportResults' commands.
 source dev-container-features-test-lib
 
-export PATH="$HOME/.local/bin:$PATH"
-
-check "uv on PATH" command -v uv
-check "uv --version" uv --version
-check "uvx on PATH" command -v uvx
-check "uvx --version" uvx --version
+# Test that uv is on PATH in a login shell (simulates DevPod SSH)
+check "uv on PATH (login shell)" bash -l -c 'command -v uv'
+check "uv --version" bash -l -c 'uv --version'
+check "uvx on PATH (login shell)" bash -l -c 'command -v uvx'
+check "uvx --version" bash -l -c 'uvx --version'
+check "UV_PYTHON_PREFERENCE set" bash -l -c 'echo $UV_PYTHON_PREFERENCE | grep -q only-managed'
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.

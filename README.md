@@ -12,6 +12,9 @@ template. See `AGENTS.md` for conventions.
 | [`fireconnect`](src/fireconnect/README.md) | Routes coding agents through Fireworks AI models via the [FireConnect](https://github.com/fw-ai/fireconnect) CLI. |
 | [`devcontainers-cli`](src/devcontainers-cli/README.md) | Installs the official `devcontainer` CLI. |
 | [`uv`](src/uv/README.md) | Installs [uv](https://docs.astral.sh/uv/) and `uvx`, with optional pre-installed Python and uv-managed enforcement. |
+| [`gcloud-cli`](src/gcloud-cli/README.md) | Installs the Google Cloud CLI (`gcloud`) via the official apt repository. |
+| [`opencode`](src/opencode/README.md) | Installs [opencode](https://opencode.ai), an AI coding agent for the terminal. |
+| [`rtk`](src/rtk/README.md) | Installs [rtk](https://www.rtk-ai.app), compresses CLI output to save AI context tokens. |
 
 ## Usage
 
@@ -19,7 +22,10 @@ template. See `AGENTS.md` for conventions.
 "features": {
   "ghcr.io/sina-al/devcontainer-features/fireconnect:0.1": { "version": "latest", "login": false },
   "ghcr.io/sina-al/devcontainer-features/devcontainers-cli:0.1": { "version": "latest" },
-  "ghcr.io/sina-al/devcontainer-features/uv:0.2": { "version": "latest", "pythonVersions": "3.12,3.13", "defaultPython": "3.12" }
+  "ghcr.io/sina-al/devcontainer-features/uv:0.2": { "version": "latest", "pythonVersions": "3.12,3.13", "defaultPython": "3.12" },
+  "ghcr.io/sina-al/devcontainer-features/gcloud-cli:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/opencode:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/rtk:0.1": { "version": "latest", "agent": "opencode" }
 }
 ```
 
