@@ -1,23 +1,24 @@
-# TypeScript
 
-Installs the [TypeScript](https://www.typescriptlang.org/) compiler globally via npm.
+# TypeScript (typescript)
 
-## Usage
+Installs the TypeScript compiler globally via npm.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/typescript:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/typescript:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | TypeScript version. `latest` installs the newest release. Otherwise a specific version like `7.0.2`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | TypeScript version to install. 'latest' installs the newest release. Otherwise a specific version such as '7.0.2'. | string | latest |
 
-## Notes
 
-Requires Node.js (install the `ghcr.io/devcontainers/features/node` feature first).
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/typescript/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

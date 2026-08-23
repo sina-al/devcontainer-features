@@ -1,40 +1,44 @@
-# Dev Container CLI (dev container feature)
 
-Installs the official [Dev Container CLI](https://github.com/devcontainers/cli)
-(`devcontainer`), the reference implementation that builds and configures dev
-containers and helps author and test dev container features and templates.
+# Dev Container CLI (devcontainers-cli)
 
-## Example usage
+Installs the official Dev Container CLI (devcontainer), used to build, run, and test dev containers and author/tests dev container features and templates.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/devcontainers-cli:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/devcontainers-cli:0": {}
 }
 ```
 
 ## Options
 
-| Options Id | Type | Default | Description |
-| --- | --- | --- | --- |
-| version | string | `latest` | CLI version to install. `latest` installs the newest release; otherwise a published version such as `0.88.0` (a leading `v` is stripped). |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | Dev Container CLI version to install. 'latest' installs the newest release. Otherwise a published version such as '0.88.0' (a leading 'v' is stripped). | string | latest |
 
-## Useful commands
+# Notes
 
-```sh
-devcontainer features test --features fireconnect .              # run a feature's tests
-devcontainer features package src/fireconnect                    # package a feature to OCI format
-devcontainer build --workspace-folder .                          # build the devcontainer image
-devcontainer up --workspace-folder .                             # create and run the container
-```
+## Install method
 
-See the [feature testing docs](https://github.com/devcontainers/cli/blob/main/docs/features/test.md)
-and `devcontainer --help`.
+The CLI offers two install paths: an official self-contained install script
+(`install.sh`, bundles its own Node runtime) or `npm install -g @devcontainers/cli`
+(needs Node plus Python and a C/C++ toolchain to build a dependency).
 
-## Install details
+This feature uses the **install script** because it is dependency-free and works
+regardless of feature ordering. The npm path is avoided because it is heavier and
+can fail without build tools.
 
-The feature installs for the target (remote) user using the official
-self-contained installer, which bundles a Node.js runtime — so it needs no
-pre-installed Node and no build tools. It lands at `~/.devcontainers/bin` and is
-added to the user's `PATH`.
+## Why a local feature
+
+Installing for the remote user via `su -` keeps the CLI under the user's home
+(`~/.devcontainers`) and on the user's `PATH`, matching where the other tools in
+this image live. A feature also makes the CLI available early in the build, so it
+can be used to test sibling features (for example
+`devcontainer features test .devcontainer/features/fireconnect`) inside the
+sandbox.
+
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/devcontainers-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

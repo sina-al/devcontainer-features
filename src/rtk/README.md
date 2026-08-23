@@ -1,39 +1,25 @@
-# rtk
 
-Installs [rtk](https://www.rtk-ai.app) (Rust Token Killer) — a CLI tool that compresses command outputs before they reach the AI context window. Reduces token usage by 60-90% with zero config changes.
+# rtk (Rust Token Killer) (rtk)
 
-## Usage
+Installs rtk, a CLI tool that compresses command outputs before they reach the AI context window. Reduces token usage by 60-90% with zero config changes. Optionally runs rtk init to activate the auto-rewrite hook for a specific AI agent.
 
-Minimal — just rtk, init manually later:
+## Example Usage
 
-```jsonc
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/rtk:0.1": {
-    "version": "latest"
-  }
-}
-```
-
-Pre-configure rtk for opencode at build time:
-
-```jsonc
-"features": {
-  "ghcr.io/sina-al/devcontainer-features/rtk:0.1": {
-    "version": "latest",
-    "agent": "opencode"
-  }
+    "ghcr.io/sina-al/devcontainer-features/rtk:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | rtk version. `latest` installs the newest release. Otherwise a specific version like `0.45.0`. |
-| `agent` | string | `""` | AI agent to configure via `rtk init --global --agent <agent>`. Empty skips init. Supported: `opencode`, `claude-code`, `cursor`, `aider`, `gemini-cli`, `codex`, `windsurf`, `cline`, `copilot`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | rtk version to install. 'latest' installs the newest release. Otherwise a published version such as '0.45.0' (a leading 'v' is stripped). | string | latest |
+| agent | AI agent to configure rtk for at build time via 'rtk init --global'. Empty skips init (run it manually later). Supported agents: opencode, claude-code, cursor, aider, gemini-cli, codex, windsurf, cline, copilot. | string | - |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/rtk` (system-wide, always on PATH).
 
-When `agent` is set, `rtk init --global --agent <agent>` runs as the remote user at build time so the auto-rewrite hook is active from the first shell session. If init fails (e.g. the agent's config directory doesn't exist yet), you can run it manually after startup.
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/rtk/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

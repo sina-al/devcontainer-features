@@ -1,23 +1,24 @@
-# k3d
 
-Installs [k3d](https://k3d.io/) — a lightweight wrapper to run k3s in Docker.
+# k3d (k3d)
 
-## Usage
+Installs k3d, a lightweight wrapper to run k3s in Docker.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/k3d:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/k3d:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | k3d version. `latest` installs the newest release. Otherwise a specific version like `5.9.0`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | k3d version to install. 'latest' installs the newest release. Otherwise a published version such as '5.9.0' (a leading 'v' is stripped). | string | latest |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/k3d` (system-wide, always on PATH).
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/k3d/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
