@@ -80,7 +80,11 @@ else
   apt_cache_version_soft_match GCLOUD_VERSION "google-cloud-cli"
 fi
 
-apt-get install -yq "google-cloud-cli${GCLOUD_VERSION}"
+if [ -n "${GCLOUD_VERSION}" ]; then
+  apt-get install -yq "google-cloud-cli=${GCLOUD_VERSION}"
+else
+  apt-get install -yq "google-cloud-cli"
+fi
 
 if [ "${INSTALL_GKE_PLUGIN}" = "true" ]; then
   echo "gcloud-cli: installing GKE gcloud auth plugin..."
