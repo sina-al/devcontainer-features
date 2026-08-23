@@ -1,6 +1,6 @@
 {
   "id": "opencode",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "opencode",
   "documentationURL": "https://opencode.ai/docs",
   "description": "Installs opencode, an AI coding agent built for the terminal. Open-source alternative to Claude Code with support for multiple LLM providers.",

@@ -1,6 +1,6 @@
 {
   "id": "fireconnect",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "FireConnect CLI",
   "documentationURL": "https://github.com/fw-ai/fireconnect",
   "description": "Installs the FireConnect CLI, which routes coding agents (OpenCode, Claude Code, Codex, and others) through Fireworks AI models.",
