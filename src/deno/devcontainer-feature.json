@@ -1,0 +1,20 @@
+{
+  "id": "deno",
+  "version": "0.1.0",
+  "name": "Deno",
+  "documentationURL": "https://deno.com/",
+  "description": "Installs Deno, a modern JavaScript, TypeScript, and WebAssembly runtime.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "2.9.5",
+        "2.9.4",
+        "2.8.4"
+      ],
+      "default": "latest",
+      "description": "Deno version to install. 'latest' installs the newest release. Otherwise a published version such as '2.9.5' (a leading 'v' is stripped)."
+    }
+  }
+}

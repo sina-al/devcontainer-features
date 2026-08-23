@@ -1,0 +1,20 @@
+{
+  "id": "kubebuilder",
+  "version": "0.1.0",
+  "name": "kubebuilder",
+  "documentationURL": "https://book.kubebuilder.io/",
+  "description": "Installs kubebuilder, a framework for building Kubernetes APIs using CRDs.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "4.15.0",
+        "4.14.0",
+        "4.13.1"
+      ],
+      "default": "latest",
+      "description": "kubebuilder version to install. 'latest' installs the newest release. Otherwise a published version such as '4.15.0' (a leading 'v' is stripped)."
+    }
+  }
+}

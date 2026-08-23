@@ -1,0 +1,20 @@
+{
+  "id": "skaffold",
+  "version": "0.1.0",
+  "name": "skaffold",
+  "documentationURL": "https://skaffold.dev/",
+  "description": "Installs Skaffold, a tool for continuous development of Kubernetes applications.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "2.24.0",
+        "2.23.0",
+        "2.22.0"
+      ],
+      "default": "latest",
+      "description": "Skaffold version to install. 'latest' installs the newest release. Otherwise a published version such as '2.24.0' (a leading 'v' is stripped)."
+    }
+  }
+}

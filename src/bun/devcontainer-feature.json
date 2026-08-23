@@ -1,0 +1,23 @@
+{
+  "id": "bun",
+  "version": "0.1.0",
+  "name": "Bun",
+  "documentationURL": "https://bun.sh/",
+  "description": "Installs Bun, a fast JavaScript runtime, bundler, and package manager.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "1.4.0",
+        "1.3.2",
+        "1.2.19"
+      ],
+      "default": "latest",
+      "description": "Bun version to install. 'latest' installs the newest release. Otherwise a published version such as '1.4.0' (a leading 'bun-v' is stripped)."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}

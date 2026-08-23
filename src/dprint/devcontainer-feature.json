@@ -1,0 +1,20 @@
+{
+  "id": "dprint",
+  "version": "0.1.0",
+  "name": "dprint",
+  "documentationURL": "https://dprint.dev/",
+  "description": "Installs dprint, a pluggable and configurable code formatting platform.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "0.56.1",
+        "0.56.0",
+        "0.55.2"
+      ],
+      "default": "latest",
+      "description": "dprint version to install. 'latest' installs the newest release. Otherwise a published version such as '0.56.1'."
+    }
+  }
+}

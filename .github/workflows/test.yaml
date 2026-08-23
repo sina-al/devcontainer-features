@@ -23,6 +23,15 @@ jobs:
           - zoxide
           - zellij
           - kustomize
+          - dprint
+          - k3s
+          - k3d
+          - zizmor
+          - k9s
+          - skaffold
+          - bun
+          - deno
+          - kubebuilder
         baseImage:
           - mcr.microsoft.com/devcontainers/base:ubuntu
           - mcr.microsoft.com/devcontainers/base:debian
@@ -52,6 +61,16 @@ jobs:
           - zoxide
           - zellij
           - kustomize
+          - dprint
+          - k3s
+          - k3d
+          - zizmor
+          - k9s
+          - skaffold
+          - bun
+          - deno
+          - typescript
+          - kubebuilder
     steps:
       - uses: actions/checkout@v4
 

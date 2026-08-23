@@ -1,0 +1,20 @@
+{
+  "id": "k3s",
+  "version": "0.1.0",
+  "name": "k3s",
+  "documentationURL": "https://k3s.io/",
+  "description": "Installs k3s, a lightweight Kubernetes distribution.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "v1.36.3+k3s1",
+        "v1.36.2+k3s1",
+        "v1.35.7+k3s1"
+      ],
+      "default": "latest",
+      "description": "k3s version to install. 'latest' installs the newest release. Otherwise a published version such as 'v1.36.3+k3s1'."
+    }
+  }
+}

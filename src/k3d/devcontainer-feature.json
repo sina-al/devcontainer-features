@@ -1,0 +1,20 @@
+{
+  "id": "k3d",
+  "version": "0.1.0",
+  "name": "k3d",
+  "documentationURL": "https://k3d.io/",
+  "description": "Installs k3d, a lightweight wrapper to run k3s in Docker.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "5.9.0",
+        "5.8.3",
+        "5.7.4"
+      ],
+      "default": "latest",
+      "description": "k3d version to install. 'latest' installs the newest release. Otherwise a published version such as '5.9.0' (a leading 'v' is stripped)."
+    }
+  }
+}

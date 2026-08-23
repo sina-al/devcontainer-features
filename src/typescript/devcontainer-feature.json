@@ -1,0 +1,23 @@
+{
+  "id": "typescript",
+  "version": "0.1.0",
+  "name": "TypeScript",
+  "documentationURL": "https://www.typescriptlang.org/",
+  "description": "Installs the TypeScript compiler globally via npm.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "7.0.2",
+        "5.9.2",
+        "5.8.3"
+      ],
+      "default": "latest",
+      "description": "TypeScript version to install. 'latest' installs the newest release. Otherwise a specific version such as '7.0.2'."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/node"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+    "latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "dprint": {
+                "version": "latest"
+            }
+        },
+        "remoteUser": "vscode"
+    },
+    "pinned": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "dprint": {
+                "version": "0.56.1"
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}

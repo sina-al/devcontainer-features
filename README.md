@@ -23,6 +23,16 @@ template. See `AGENTS.md` for conventions.
 | [`zoxide`](src/zoxide/README.md) | Installs [zoxide](https://github.com/ajeetdsouza/zoxide), a smarter cd command. |
 | [`zellij`](src/zellij/README.md) | Installs [zellij](https://zellij.dev), a terminal workspace with panes and tabs. |
 | [`kustomize`](src/kustomize/README.md) | Installs [kustomize](https://kubectl.docs.kubernetes.io/), a Kubernetes config management tool. |
+| [`dprint`](src/dprint/README.md) | Installs [dprint](https://dprint.dev/), a pluggable code formatting platform. |
+| [`k3s`](src/k3s/README.md) | Installs [k3s](https://k3s.io/), a lightweight Kubernetes distribution. |
+| [`k3d`](src/k3d/README.md) | Installs [k3d](https://k3d.io/), a lightweight wrapper to run k3s in Docker. |
+| [`zizmor`](src/zizmor/README.md) | Installs [zizmor](https://docs.zizmor.sh/), a static analysis tool for GitHub Actions. |
+| [`k9s`](src/k9s/README.md) | Installs [k9s](https://k9scli.io/), a terminal-based UI for Kubernetes clusters. |
+| [`skaffold`](src/skaffold/README.md) | Installs [Skaffold](https://skaffold.dev/), a tool for continuous development of Kubernetes applications. |
+| [`bun`](src/bun/README.md) | Installs [Bun](https://bun.sh/), a fast JavaScript runtime, bundler, and package manager. |
+| [`deno`](src/deno/README.md) | Installs [Deno](https://deno.com/), a modern JavaScript, TypeScript, and WebAssembly runtime. |
+| [`typescript`](src/typescript/README.md) | Installs the [TypeScript](https://www.typescriptlang.org/) compiler globally via npm. |
+| [`kubebuilder`](src/kubebuilder/README.md) | Installs [kubebuilder](https://book.kubebuilder.io/), a framework for building Kubernetes APIs using CRDs. |
 
 ## Usage
 
@@ -41,7 +51,17 @@ template. See `AGENTS.md` for conventions.
   "ghcr.io/sina-al/devcontainer-features/eza:0.1": { "version": "latest" },
   "ghcr.io/sina-al/devcontainer-features/zoxide:0.1": { "version": "latest" },
   "ghcr.io/sina-al/devcontainer-features/zellij:0.1": { "version": "latest" },
-  "ghcr.io/sina-al/devcontainer-features/kustomize:0.1": { "version": "latest" }
+  "ghcr.io/sina-al/devcontainer-features/kustomize:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/dprint:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/k3s:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/k3d:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/zizmor:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/k9s:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/skaffold:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/bun:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/deno:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/typescript:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/kubebuilder:0.1": { "version": "latest" }
 }
 ```
 

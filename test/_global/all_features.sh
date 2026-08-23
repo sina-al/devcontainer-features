@@ -43,6 +43,26 @@ check "zellij on PATH" command -v zellij
 check "zellij --version" zellij --version
 check "kustomize on PATH" command -v kustomize
 check "kustomize version" kustomize version
+check "dprint on PATH" command -v dprint
+check "dprint --version" dprint --version
+check "k3s on PATH" command -v k3s
+check "k3s --version" k3s --version
+check "k3d on PATH" command -v k3d
+check "k3d version" k3d version
+check "zizmor on PATH" command -v zizmor
+check "zizmor --version" zizmor --version
+check "k9s on PATH" command -v k9s
+check "k9s version" k9s version
+check "skaffold on PATH" command -v skaffold
+check "skaffold version" skaffold version
+check "bun on PATH" command -v bun
+check "bun --version" bun --version
+check "deno on PATH" command -v deno
+check "deno --version" deno --version
+check "tsc on PATH" command -v tsc
+check "tsc --version" tsc --version
+check "kubebuilder on PATH" command -v kubebuilder
+check "kubebuilder version" kubebuilder version
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.
