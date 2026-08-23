@@ -33,6 +33,7 @@ template. See `AGENTS.md` for conventions.
 | [`deno`](src/deno/README.md) | Installs [Deno](https://deno.com/), a modern JavaScript, TypeScript, and WebAssembly runtime. |
 | [`typescript`](src/typescript/README.md) | Installs the [TypeScript](https://www.typescriptlang.org/) compiler globally via npm. |
 | [`kubebuilder`](src/kubebuilder/README.md) | Installs [kubebuilder](https://book.kubebuilder.io/), a framework for building Kubernetes APIs using CRDs. |
+| [`opentofu`](src/opentofu/README.md) | Installs [OpenTofu](https://opentofu.org/) (tofu), [Terragrunt](https://terragrunt.gruntwork.io/), and [TFLint](https://github.com/terraform-linters/tflint) — an IaC toolchain. |
 
 ## Usage
 
@@ -61,7 +62,8 @@ template. See `AGENTS.md` for conventions.
   "ghcr.io/sina-al/devcontainer-features/bun:0.1": { "version": "latest" },
   "ghcr.io/sina-al/devcontainer-features/deno:0.1": { "version": "latest" },
   "ghcr.io/sina-al/devcontainer-features/typescript:0.1": { "version": "latest" },
-  "ghcr.io/sina-al/devcontainer-features/kubebuilder:0.1": { "version": "latest" }
+  "ghcr.io/sina-al/devcontainer-features/kubebuilder:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/opentofu:0.1": { "tofuVersion": "latest", "terragruntVersion": "latest", "tflintVersion": "latest" }
 }
 ```
 

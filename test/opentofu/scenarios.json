@@ -1,0 +1,24 @@
+{
+    "latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "opentofu": {
+                "tofuVersion": "latest",
+                "terragruntVersion": "latest",
+                "tflintVersion": "latest"
+            }
+        },
+        "remoteUser": "vscode"
+    },
+    "pinned": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "opentofu": {
+                "tofuVersion": "1.12.6",
+                "terragruntVersion": "1.1.3",
+                "tflintVersion": "0.64.0"
+            }
+        },
+        "remoteUser": "vscode"
+    }
+}

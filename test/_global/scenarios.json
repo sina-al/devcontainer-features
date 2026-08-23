@@ -93,6 +93,11 @@
             },
             "kubebuilder": {
                 "version": "latest"
+            },
+            "opentofu": {
+                "tofuVersion": "latest",
+                "terragruntVersion": "latest",
+                "tflintVersion": "latest"
             }
         },
         "remoteUser": "vscode"

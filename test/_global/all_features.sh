@@ -63,6 +63,12 @@ check "tsc on PATH" command -v tsc
 check "tsc --version" tsc --version
 check "kubebuilder on PATH" command -v kubebuilder
 check "kubebuilder version" kubebuilder version
+check "tofu on PATH" command -v tofu
+check "tofu --version" tofu --version
+check "terragrunt on PATH" command -v terragrunt
+check "terragrunt --version" terragrunt --version
+check "tflint on PATH" command -v tflint
+check "tflint --version" tflint --version
 
 # Report result
 # If any of the checks above exited with a non-zero exit code, the test will fail.

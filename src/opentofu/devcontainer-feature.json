@@ -1,0 +1,42 @@
+{
+  "id": "opentofu",
+  "version": "0.1.0",
+  "name": "OpenTofu, Terragrunt & TFLint",
+  "documentationURL": "https://opentofu.org/",
+  "description": "Installs OpenTofu (tofu), Terragrunt, and TFLint — an IaC toolchain for Terraform-compatible workflows.",
+  "options": {
+    "tofuVersion": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "1.12.6",
+        "1.12.5",
+        "1.11.4"
+      ],
+      "default": "latest",
+      "description": "OpenTofu (tofu) version. 'latest' installs the newest release. Otherwise a specific version like '1.12.6' (a leading 'v' is stripped)."
+    },
+    "terragruntVersion": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "1.1.3",
+        "1.1.2",
+        "1.0.5"
+      ],
+      "default": "latest",
+      "description": "Terragrunt version. 'latest' installs the newest release. Otherwise a specific version like '1.1.3' (a leading 'v' is stripped)."
+    },
+    "tflintVersion": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "0.64.0",
+        "0.63.4",
+        "0.62.1"
+      ],
+      "default": "latest",
+      "description": "TFLint version. 'latest' installs the newest release. Otherwise a specific version like '0.64.0' (a leading 'v' is stripped)."
+    }
+  }
+}
