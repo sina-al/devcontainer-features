@@ -1,23 +1,24 @@
-# opencode
 
-Installs [opencode](https://opencode.ai) — an AI coding agent built for the terminal. Open-source alternative to Claude Code with support for multiple LLM providers.
+# opencode (opencode)
 
-## Usage
+Installs opencode, an AI coding agent built for the terminal. Open-source alternative to Claude Code with support for multiple LLM providers.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/opencode:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/opencode:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | opencode version. `latest` installs the newest release. Otherwise a specific version like `1.18.21`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | opencode version to install. 'latest' installs the newest release. Otherwise a published version such as '1.18.21' (a leading 'v' is stripped). | string | latest |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/opencode` (system-wide, always on PATH). Pair with the `fireconnect` feature to route opencode through Fireworks AI models.
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/opencode/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
