@@ -8,7 +8,7 @@ containers and helps author and test dev container features and templates.
 
 ```jsonc
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/devcontainers-cli:1": {
+  "ghcr.io/sina-al/devcontainer-features/devcontainers-cli:0.1": {
     "version": "latest"
   }
 }

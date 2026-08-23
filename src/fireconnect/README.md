@@ -8,7 +8,7 @@ Harness — through [Fireworks AI](https://fireworks.ai) models.
 
 ```jsonc
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/fireconnect:1": {
+  "ghcr.io/sina-al/devcontainer-features/fireconnect:0.1": {
     "version": "latest",
     "login": false
   }

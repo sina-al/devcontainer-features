@@ -16,7 +16,7 @@ Minimal — just uv, install Python yourself at runtime:
 
 ```jsonc
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/uv:1": {
+  "ghcr.io/sina-al/devcontainer-features/uv:0.2": {
     "version": "latest"
   }
 }
@@ -26,7 +26,7 @@ Pre-install Python 3.12 and 3.13, pin 3.12 as default, enforce uv-managed only:
 
 ```jsonc
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/uv:1": {
+  "ghcr.io/sina-al/devcontainer-features/uv:0.2": {
     "version": "latest",
     "pythonVersions": "3.12,3.13",
     "defaultPython": "3.12",

@@ -17,9 +17,9 @@ template. See `AGENTS.md` for conventions.
 
 ```jsonc
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/fireconnect:1": { "version": "latest", "login": false },
-  "ghcr.io/sina-al/devcontainer-features/devcontainers-cli:1": { "version": "latest" },
-  "ghcr.io/sina-al/devcontainer-features/uv:1": { "version": "latest", "pythonVersions": "3.12,3.13", "defaultPython": "3.12" }
+  "ghcr.io/sina-al/devcontainer-features/fireconnect:0.1": { "version": "latest", "login": false },
+  "ghcr.io/sina-al/devcontainer-features/devcontainers-cli:0.1": { "version": "latest" },
+  "ghcr.io/sina-al/devcontainer-features/uv:0.2": { "version": "latest", "pythonVersions": "3.12,3.13", "defaultPython": "3.12" }
 }
 ```
 
