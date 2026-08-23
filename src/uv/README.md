@@ -1,85 +1,91 @@
-# uv (dev container feature)
 
-Installs [uv](https://docs.astral.sh/uv/) and `uvx` — Astral's extremely fast
-Python package and project manager, written in Rust — via the official standalone
-installer. `uv` manages Python projects, versions, and packages; `uvx` runs
-isolated one-off commands. Both ship in the same release tarball, so this feature
-installs both in one pass.
+# uv (and uvx) (uv)
 
-Optionally pre-installs uv-managed Python versions at build time and enforces uv
-as the sole Python source, so a pre-built image gives a fast, uv-only-managed
-Python setup with no runtime downloads.
+Installs uv and uvx, the extremely fast Python package and project manager from Astral, via the official standalone installer. Optionally pre-installs uv-managed Python versions and enforces uv as the sole Python source.
 
-## Example usage
+## Example Usage
 
-Minimal — just uv, install Python yourself at runtime:
-
-```jsonc
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/uv:0.2": {
-    "version": "latest"
-  }
-}
-```
-
-Pre-install Python 3.12 and 3.13, pin 3.12 as default, enforce uv-managed only:
-
-```jsonc
-"features": {
-  "ghcr.io/sina-al/devcontainer-features/uv:0.2": {
-    "version": "latest",
-    "pythonVersions": "3.12,3.13",
-    "defaultPython": "3.12",
-    "pythonPreference": "only-managed"
-  }
+    "ghcr.io/sina-al/devcontainer-features/uv:0": {}
 }
 ```
 
 ## Options
 
-| Options Id | Type | Default | Description |
-| --- | --- | --- | --- |
-| version | string | `latest` | uv version to install. `latest` installs the newest release; otherwise a published version such as `0.12.5` (a leading `v` is stripped). |
-| pythonVersions | string | `""` | Comma-separated Python versions to pre-install at build time (e.g. `3.12,3.13`). Empty installs none; install later with `uv python install`. |
-| defaultPython | string | `""` | Python version to pin as the global default (e.g. `3.12`). If set, it is installed (with `--default`) and pinned via `uv python pin --global`. |
-| pythonPreference | string | `only-managed` | Sets `UV_PYTHON_PREFERENCE` so uv enforces uv-managed Python. `only-managed` (the default) makes uv ignore system Python entirely; `managed` prefers uv-managed but falls back to system. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | uv version to install. 'latest' installs the newest release. Otherwise a published version such as '0.12.5' (a leading 'v' is stripped). | string | latest |
+| pythonVersions | Comma-separated Python versions to pre-install at build time (e.g. '3.12,3.13'). Empty installs none; install later with 'uv python install'. | string | - |
+| defaultPython | Python version to pin as the global default (e.g. '3.12'). If set, it is installed (with --default) and pinned via 'uv python pin --global'. | string | - |
+| pythonPreference | Sets UV_PYTHON_PREFERENCE so uv enforces uv-managed Python. 'only-managed' (the default) makes uv ignore system Python entirely; 'managed' prefers uv-managed but falls back to system. | string | only-managed |
 
-## Install details
+# Notes
 
-The feature runs as root at image build time and installs uv for the target
-(remote) user:
+## Why the official standalone installer
 
-- Downloads and runs Astral's [official standalone installer](https://docs.astral.sh/uv/getting-started/installation/),
-  which ships a self-contained binary (no Python or build tools required).
-- For `latest`, fetches `https://astral.sh/uv/install.sh`; for a pinned version,
-  fetches the release-specific installer at
-  `https://github.com/astral-sh/uv/releases/download/<version>/uv-installer.sh`.
-- Lands `uv` and `uvx` at `~/.local/bin` and appends that to the user's `PATH`
-  in their shell config (the installer handles this itself).
+uv offers several install paths: the standalone installer script, `pip install
+uv`, and `pipx install uv`. This feature uses the **standalone installer**
+because it ships a self-contained binary with no dependency on Python, pip, or
+build tools — it works regardless of feature ordering and on minimal base images.
 
-When `pythonVersions` is set, runs `uv python install` for each version so the
-interpreters are baked into the image layer — no runtime download needed. When
-`defaultPython` is set, installs it with `--default` and pins it globally via
-`uv python pin --global` (writes `~/.config/uv/.python-version`).
+## Why install for the remote user (not root)
 
-### Python enforcement
+The standalone installer resolves its install directory to `$HOME/.local/bin`
+by default and appends that to the user's shell rc files. A feature runs as root
+at build time, so piping the installer to `sh` as root would put `uv`/`uvx` in
+`/root/.local/bin` — off the sandbox user's PATH. This feature runs the installer
+under `su - <user>`, so the binaries and PATH update land where the user works.
 
-The feature writes `UV_PYTHON_PREFERENCE` to `/etc/profile.d/uv-python.sh` and
-the user's `~/.bashrc`. With the default `only-managed`, uv ignores any system
-Python (e.g. one installed by the `ghcr.io/devcontainers/features/python`
-feature or the base image) and only uses uv-managed interpreters. This is
-enforced whenever the feature is used, regardless of whether `pythonVersions` is
-set — so even a bare `uv run python` will use a uv-managed Python, never a
-system one.
+## Version pinning
 
-To allow uv to fall back to system Python, set `pythonPreference` to `managed`.
+The standalone installer has no `--version` flag; the version is baked into the
+installer script served at `https://astral.sh/uv/install.sh` (always latest). To
+pin a version, this feature fetches the **release-specific installer** published
+as a release asset at
+`https://github.com/astral-sh/uv/releases/download/<version>/uv-installer.sh`.
+A leading `v` is stripped from the version input so GitHub-style tags (`v0.12.5`)
+work too.
 
-## Usage
+## Pre-installing Python at build time
 
-```bash
-uv --version              # installed uv version
-uv python list            # show installed uv-managed Python versions
-uv python install 3.14    # install another Python at runtime
-uv run python -V          # run the default (pinned) Python
-uvx ruff check .          # run a tool in an isolated environment
-```
+`uv python install <version>` downloads a standalone Python build from the
+python-build-standalone project and extracts it under
+`~/.local/share/uv/python/`. Running this at image build time (via this feature's
+`pythonVersions` option) bakes the interpreters into the image layer, so the
+pre-built image has them ready with no runtime download. `uv python pin <version>
+--global` writes `~/.config/uv/.python-version` so uv selects that version by
+default for projects without their own pin.
+
+## Python enforcement via UV_PYTHON_PREFERENCE
+
+The key enforcement mechanism is the `UV_PYTHON_PREFERENCE` environment variable.
+`only-managed` (the default) tells uv to only use uv-managed Python interpreters
+and ignore any system Python — whether from the base image, the
+`ghcr.io/devcontainers/features/python` feature, or a system package manager.
+This means:
+
+- `uv run python` uses a uv-managed interpreter, not `/usr/bin/python3`.
+- `uv pip install` installs into a uv-managed environment, not a system one.
+- If no uv-managed Python is installed, uv errors instead of falling back to
+  system Python (unless `pythonPreference` is `managed`).
+
+The variable is written to `/etc/profile.d/uv-python.sh` (sourced by login
+shells) and `~/.bashrc` (sourced by interactive non-login shells), so it covers
+both the VS Code terminal and `devcontainer`-launched processes.
+
+## Why based on devcontainers-extra/features/uv
+
+The most popular community uv feature (`ghcr.io/devcontainers-extra/features/uv`,
+152 stars) models the shape: a single `version` option, `installsAfter`, and
+scenario + pinned-version tests. Its `install.sh`, however, uses a "nanolayer"
+meta-tool that downloads the release tarball as root into `/usr/local/bin`. This
+feature instead uses Astral's official installer under `su -`, matching this
+collection's convention of installing into the remote user's home, and adds
+build-time Python pre-installation and enforcement that the community feature
+does not offer.
+
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/uv/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
