@@ -1,23 +1,24 @@
-# k3s
 
-Installs [k3s](https://k3s.io/) — a lightweight Kubernetes distribution.
+# k3s (k3s)
 
-## Usage
+Installs k3s, a lightweight Kubernetes distribution.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/k3s:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/k3s:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | k3s version. `latest` installs the newest release. Otherwise a specific version like `v1.36.3+k3s1`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | k3s version to install. 'latest' installs the newest release. Otherwise a published version such as 'v1.36.3+k3s1'. | string | latest |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/k3s` (system-wide, always on PATH).
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/k3s/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
