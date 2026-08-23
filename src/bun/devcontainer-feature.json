@@ -1,6 +1,6 @@
 {
   "id": "bun",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "Bun",
   "documentationURL": "https://bun.sh/",
   "description": "Installs Bun, a fast JavaScript runtime, bundler, and package manager.",
