@@ -68,7 +68,7 @@ echo "bun: downloading from ${DOWNLOAD_URL}..."
 curl -fL --retry 3 --retry-delay 2 -o "${TMP_DIR}/bun.zip" "${DOWNLOAD_URL}"
 
 unzip -o "${TMP_DIR}/bun.zip" -d "${TMP_DIR}"
-install -m 0755 "${TMP_DIR}/bun-${ARCH_SUFFIX}/bun" /usr/local/bin/bun
+install -m 0755 "${TMP_DIR}/bun-linux-${ARCH_SUFFIX}/bun" /usr/local/bin/bun
 
 rm -rf /var/lib/apt/lists/*
 
