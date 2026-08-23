@@ -1,23 +1,24 @@
-# zizmor
 
-Installs [zizmor](https://docs.zizmor.sh/) — a static analysis tool for GitHub Actions.
+# zizmor (zizmor)
 
-## Usage
+Installs zizmor, a static analysis tool for GitHub Actions.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/zizmor:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/zizmor:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | zizmor version. `latest` installs the newest release. Otherwise a specific version like `1.29.0`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | zizmor version to install. 'latest' installs the newest release. Otherwise a published version such as '1.29.0' (a leading 'v' is stripped). | string | latest |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/zizmor` (system-wide, always on PATH).
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/zizmor/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

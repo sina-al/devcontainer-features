@@ -1,23 +1,24 @@
-# skaffold
 
-Installs [Skaffold](https://skaffold.dev/) — a tool for continuous development of Kubernetes applications.
+# skaffold (skaffold)
 
-## Usage
+Installs Skaffold, a tool for continuous development of Kubernetes applications.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/skaffold:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/skaffold:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | Skaffold version. `latest` installs the newest release. Otherwise a specific version like `2.24.0`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | Skaffold version to install. 'latest' installs the newest release. Otherwise a published version such as '2.24.0' (a leading 'v' is stripped). | string | latest |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/skaffold` (system-wide, always on PATH).
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/skaffold/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

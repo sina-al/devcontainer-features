@@ -1,23 +1,24 @@
-# k9s
 
-Installs [k9s](https://k9scli.io/) — a terminal-based UI for Kubernetes clusters.
+# k9s (k9s)
 
-## Usage
+Installs k9s, a terminal-based UI for Kubernetes clusters.
 
-```jsonc
+## Example Usage
+
+```json
 "features": {
-  "ghcr.io/sina-al/devcontainer-features/k9s:0.1": {
-    "version": "latest"
-  }
+    "ghcr.io/sina-al/devcontainer-features/k9s:0": {}
 }
 ```
 
 ## Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `version` | string | `latest` | k9s version. `latest` installs the newest release. Otherwise a specific version like `0.51.0`. |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | k9s version to install. 'latest' installs the newest release. Otherwise a published version such as '0.51.0' (a leading 'v' is stripped). | string | latest |
 
-## Notes
 
-The binary is installed to `/usr/local/bin/k9s` (system-wide, always on PATH).
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/sina-al/devcontainer-features/blob/main/src/k9s/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
