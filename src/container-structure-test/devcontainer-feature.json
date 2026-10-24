@@ -1,0 +1,20 @@
+{
+  "id": "container-structure-test",
+  "version": "0.1.0",
+  "name": "container-structure-test",
+  "documentationURL": "https://github.com/GoogleContainerTools/container-structure-test",
+  "description": "Installs container-structure-test, a framework to validate the structure of container images.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "1.22.1",
+        "1.21.0",
+        "1.20.0"
+      ],
+      "default": "latest",
+      "description": "container-structure-test version to install. 'latest' installs the newest release. Otherwise a published version such as '1.22.1' (a leading 'v' is stripped)."
+    }
+  }
+}

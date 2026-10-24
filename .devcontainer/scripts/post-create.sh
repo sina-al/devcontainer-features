@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-echo "devcontainer CLI: $(devcontainer --version)"
+# Mark workspaces as safe directories for git
+git config --global --add safe.directory "*"
+
+echo "devcontainer CLI: $(devcontainer --version 2>/dev/null || echo 'not found')"
+echo "github CLI: $(gh --version 2>/dev/null | head -n 1 || echo 'not found')"
+echo "node: $(node --version 2>/dev/null || echo 'not found')"
 
 # docker-in-docker starts dockerd as the container boots; it may still be
 # initializing when postCreateCommand runs, so report readiness without failing.

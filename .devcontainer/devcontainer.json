@@ -5,14 +5,14 @@
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:4": {
-      "version": "29.7.2",
+      "version": "latest",
       "dockerDashComposeVersion": "v2"
     },
     "ghcr.io/devcontainers/features/node:2": {
-      "version": "24.19.0"
+      "version": "lts"
     },
     "ghcr.io/devcontainers/features/github-cli:1": {
-      "version": "2.98.0"
+      "version": "latest"
     }
   },
   "forwardAgent": true,
